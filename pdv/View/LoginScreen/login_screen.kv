@@ -1,0 +1,32 @@
+<LoginScreenView>
+    name: "login_screen"
+    MDCard:
+        size_hint: None, None
+        size: 400, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 2
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+        Image:
+            source: "assets/images/logo.png"
+            size_hint_x: 1
+            halign: "center"
+        MDTextField:
+            id: login_user
+            hint_text: "Usuário"
+            helper_text_mode: "on_focus"
+            mode: "rectangle"
+            multiline: False
+        MDTextField:
+            id: login_password
+            hint_text: "senha"
+            helper_text_mode: "on_focus"
+            mode: "rectangle"
+            multiline: False
+            password: True
+        MDRaisedButton:
+            text: "Entrar"
+            pos_hint: {"center_x": .5}
+            size_hint: .3, None
+            on_release: app.authenticate()
